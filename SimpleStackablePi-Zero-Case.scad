@@ -4,8 +4,8 @@
 */
 
 numberOfPis=2;           // number of PIs to be stacked
-width=63.5;                // x width of a rawspberry pi
-depth=28.7;                // y depth of a rawspberry pi
+widthOfPi=63.5;                // x width of a rawspberry pi
+depthOfPi=28.7;                // y depth of a rawspberry pi
 roundedCornersDiam=0;    // minkowski on cover
 coverHeight=1.5;         // height of cover
 holePos=3;               // x,y position of right hole
@@ -20,7 +20,7 @@ holeWidthPos=width-holePos;// x position of left hole
 // the base of the top and bottom
 module base() {
     minkowski() {
-        cube([width,depth,coverHeight]);
+        cube([widthOfPi,depthOfPi,coverHeight]);
         sphere(roundedCornersDiam,$fn=20);
     }
 }
@@ -34,9 +34,9 @@ module connector(height) {
 module connectors(connectorHeight) {
     translate([holePos,holePos,0]) 
         connector(connectorHeight);
-    translate([holePos,depth-holePos,0]) 
+    translate([holePos,depthOfPi-holePos,0]) 
         connector(connectorHeight);
-    translate([holeWidthPos,depth-holePos,0]) 
+    translate([holeWidthPos,depthOfPi-holePos,0]) 
         connector(connectorHeight);
     translate([holeWidthPos,holePos,0]) 
         connector(connectorHeight);
@@ -58,9 +58,9 @@ module spacers(height, offset) {
     size = holePos*2;
     translate([0,0,offset]) 
         spacer(height);
-    translate([0,depth-size,offset]) 
+    translate([0,depthOfPi-size,offset]) 
         spacer(height);
-    translate([holeWidthPos-holePos,depth-size,offset]) 
+    translate([holeWidthPos-holePos,depthOfPi-size,offset]) 
         spacer(height);
     translate([holeWidthPos-holePos,0,offset]) 
         spacer(height);
