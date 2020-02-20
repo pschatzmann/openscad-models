@@ -15,7 +15,7 @@ connectorHeight=9;       // height of the connector pin
 spacerBottomHeight=5;    // height of the bottom spacer
 spacerTopHeight=7;      // height of the top spacer
 partOffset=30;           // we draw the parts by 3cm separated
-holeWidthPos=width-holePos;// x position of left hole
+holeWidthPos=widthOfPi-holePos;// x position of left hole
 
 // the base of the top and bottom
 module base() {
