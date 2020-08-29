@@ -18,7 +18,7 @@ module line(start, end, d, fn=4) {
 * A single node which is connected by edges
 */
 
-module node(pos, d, fn) {
+module node(pos, d, fn=4) {
   if (pos[0]!=undef && pos[1] != undef && pos[2] != undef){ 
     translate(pos) sphere(d=d, $fn = fn);    
   }
