@@ -112,7 +112,10 @@ module springSine3D(length=20, heigth=10, width=10, windings=4, steps=10, wireDi
         y = sin(i) * width/2;        
         line3D([x0,y0,0],[x,y,0],d=wireDiameter,h=heigth, fn=fn);  
     }
-}// we generate an hollow Ellipse
+}/**
+* 3d Spring - we generate an hollow Ellipse
+*/ 
+
 module springLeaf(width=3,len=10,height=5,thickness=1){
  scale([len/10,height/10,1]) difference() {
      cylinder(h=width, r=10, center=true);
